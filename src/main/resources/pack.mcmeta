@@ -1,6 +1,10 @@
 {
   "pack": {
     "description": "${mod_id} resources",
+<<<<<<< HEAD
+    "pack_format": 32
+=======
     "pack_format": 22
+>>>>>>> de29d9a7147094262831538d74eed24b5733ee72
   }
 }

@@ -1,4 +1,4 @@
-package com.bagaja.rubymod;
+package net.bagaja.randomdrops;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -19,12 +19,12 @@ import java.util.List;
 import java.util.Random;
 
 @Mod("randomdropmod")
-public class RubyMod {
+public class RandomDrops {
     public static final String MOD_ID = "randomdropmod";
     private static final Random RANDOM = new Random();
     private static final List<Item> ITEMS = new ArrayList<>();
 
-    public RubyMod() {
+    public RandomDrops() {
         MinecraftForge.EVENT_BUS.register(this);
 
         // Populate the ITEMS list with all registered items
