@@ -1,3 +1,97 @@
+<<<<<<< HEAD
+1.20.x Changelog
+50.1
+====
+ - 50.1.20 Remove unneeded boat patch (backport of #10061 to 1.20.6) (#10086)
+           Co-authored-by: andan42 <49289986+andan42@users.noreply.github.com>
+ - 50.1.19 Use the new methods in EventBus (backport of #10028 to 1.20.6) (#10091)
+           Adds `fire()` and Result#isAllowed/isDenied/isDefault from EventBus
+ - 50.1.18 Backport some Vanilla 1.21 `ResourceLocation` methods (#10084)
+ - 50.1.17 Optionally supply `FMLJavaModLoadingContext` as a param to mod constructors (backport of #10074 to 1.20.6) (#10083)
+ - 50.1.16 Fix highlighted item tooltip rendering twice. Closes #10112
+ - 50.1.15 Add missed @user_jvm_args.txt to run.bat (backport of 40a0a16 to 1.20.6) (#10092)
+ - 50.1.14 Fire `OnDatapackSyncEvent` when a player joins a server (#10077)
+ - 50.1.13 Fix network channels not initializing during server transfers. Closes #10067
+ - 50.1.12 Fix `onPlaceItemIntoWorld` always resetting item stack when in creative mode (#10048)
+ - 50.1.11 Fix matrix stack translations for `RenderHighlightEvent` (#10051)
+ - 50.1.10 Make HangingSignBlockEntity useable with custom BlockEntityTypes. #10038
+ - 50.1.9  Choose default JarJar mod file type based on parent JAR Closes #9939 (#10021)
+           Co-authored-by: thedarkcolour <30441001+thedarkcolour@users.noreply.github.com>
+ - 50.1.8  Fixed falling block entities not rendering as moving blocks (#10006)
+           Co-authored-by: Ven <tudurap.com@gmail.com>
+ - 50.1.7  Fix conditional checking swallowing decoding errors when loading registry entries from datapacks. Fixes #9995
+ - 50.1.6  Fix ClientTickEvent not firing properly.
+ - 50.1.5  Change tick event to have pre/post classes (#9890)
+ - 50.1.4  Fix Bogged and Wolf armor not being shearable by custom shears. Closes #10005
+ - 50.1.3  Cleanup FML Bindings (#10004)
+ - 50.1.2  Fix NPE when calling ForgeHooks.getDefaultCreatorModId(ItemStack) on Spawn Eggs. Closes #10002
+ - 50.1.1  Fix boat travel distance being incorrect. Closes #9997
+ - 50.1.0  1.20.6 RB 1
+           https://forums.minecraftforge.net/topic/149458-forge-501-minecraft-1206/
+
+50.0
+====
+ - 50.0.37 Fix minor typo in MDK build.gradle
+ - 50.0.36 Fire EntityInteractSpecific on server side. Closes #9984
+ - 50.0.35 Unlock wrapped registries when firing register events.
+ - 50.0.34 Update Bootstrap to improve the Java version check error message (#9990)
+ - 50.0.33 Minor cleanup to ModListScreen and VersionChecker (#9988)
+ - 50.0.32 Prevent the `@OnlyIn` being misused on `@EventBusSubscriber` and `@Mod` annotated classes (#9891)
+ - 50.0.31 Fix CustomizeGuiOverlayEvent.DebugText and CustomizeGuiOverlayEvent.Chat not being fired. (#9982)
+ - 50.0.30 Actually fix creative tab count, IDE didn't save the file before regenning patches.
+ - 50.0.29 Move Creative Inventory page count to fix issue with partially transparent tooltips. Closes #9983
+ - 50.0.28 Make OpenContainer and SpawnEntity packets process on main game thread.
+ - 50.0.27 Add File.exists check to ConfigFileTypeHandler. Closes #9976
+ - 50.0.26 Fix crash when reloading a world that uses custom placed features. Closes #9979
+ - 50.0.25 Fix NPE in HurtByTargetGoal when mods set targets to null. Closes #7853
+ - 50.0.24 Fix RenderHandEvent firing with incorrect hand and item for offhand items. (#9977)
+ - 50.0.23 Fix screen layering and re-add the test.  (#9978)
+ - 50.0.22 Add GatherComponentsEvent (#9944)
+ - 50.0.21 Fix powered rails not propogating correctly.
+ - 50.0.20 Remove ICustomPacket and add PayloadChannel. (#9972)
+           New PayloadChannel that uses the vanilla payload Type for packet distinction
+           Implement the minecraft:register/unregister channels using the new PayloadChannel
+           New generic channel builder function allowing people to implement channels however they want.
+ - 50.0.19 Implement entity aware armor model and texture hooks. Closes #9960
+ - 50.0.18 Fix finalizeSpawn's return value not being used correctly. Closes #9964
+ - 50.0.17 Fix Biome patch change that caused our field redirect coremod to not function correctly.
+ - 50.0.16 Make RegistryObject.getHolder lazy, Should help cases where vanilla registries use holders from other vanilla registries. Closes #9961
+ - 50.0.15 Ignore jar files in the mods folder that are not Forge mods. Closes #9968
+ - 50.0.14 Fix canceling MobSpawnEvent.FinalizeSpawn causing a NPE closes #9971
+ - 50.0.13 Fix potion brewing having arguments reversed. Closes #9970
+ - 50.0.12 Fix Melons/Pumpkins not growing correctly.
+ - 50.0.11 Some patch cleanup (#9951)
+ - 50.0.10 Filter paths discovered by ServiceProvider in ClasspathLocator. Closes #9899
+ - 50.0.9  Update SimpleChannel to make StreamCodecs easier (#9959)
+           Rework networking so that RegistryFriendlyByteBuf is useable for modders
+           Simple support for StreamCodec in SimpleChannel
+           Codecify all Forge packets
+           Make simpler builder pattern for SimpleChannel. Will eventually deprecate the old MessageBuilder as it's verbose and poorly written.
+           Co-authored-by: MrCrayfish <4958241+MrCrayfish@users.noreply.github.com>
+           Co-authored-by: Paint_Ninja <PaintNinja@users.noreply.github.com>
+ - 50.0.8  Fix shields not working correctly. Fixes #9966
+ - 50.0.7  Fix RenderTarget stencil patch location. Fixes #9965
+ - 50.0.6  Add ModelLayers patch back (#9962)
+ - 50.0.5  Fix canApplyAtEnchantingTable null pointer, Closes #9956
+           Bump SecureModules for package info and multi-release jar fixes.
+ - 50.0.4  Remove zombie chance config options (#9950)
+ - 50.0.3  Remove deprecated compressLanIPv6Addresses config option (#9949)
+           LAN IPv6 addresses are always compressed these days, so this config option is redundant
+ - 50.0.2  Fix custom payloads not being handled on the server in the game state. Closes #9948
+           Fix villagers not opening trade guis. Closes #9946
+ - 50.0.1  Fix MDK by bumping FG and disabling reobf tasks
+           Fix LAN server IPs being duplicated
+           Fix connecting to vanilla servers due to misapplied patch.
+ - 50.0.0  1.20.6 Initial Update
+           New Decompiler
+           Runtime Official mappings
+           ItemStacks arnt Capability providers anymore, use Vanilla's system.
+           Co-authored-by: RealMangoRage <64402114+RealMangorage@users.noreply.github.com>
+           Co-authored-by: Paint_Ninja <PaintNinja@users.noreply.github.com>
+
+49.0
+====
+=======
 1.20.4 Changelog
 49.1
 ====
@@ -17,6 +111,7 @@
  - 49.0.52 Fix erroneous patch in FireBlock. Closes #9996
  - 49.0.51 [1.20.4] Add config option for optionally disabling non-Forge mods.toml detection (#9943)
  - 49.0.50 Filter paths discovered by ServiceProvider in ClasspathLocator. Closes #9899
+>>>>>>> de29d9a7147094262831538d74eed24b5733ee72
  - 49.0.49 Make non-Forge mods.toml detection more robust (#9935)
  - 49.0.48 Fix early window crash when parsing some forms of options.txt (#9933)
  - 49.0.47 Fix edge-case regression with single-jar multiloader mods (#9931)
